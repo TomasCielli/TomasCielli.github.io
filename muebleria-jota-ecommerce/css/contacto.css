@@ -1,0 +1,190 @@
+/*Aqui ira css en general para todas las paginas flexbox , box modeling */
+
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap");
+
+:root {
+  /* Colores de la paleta */
+  --siena-tostado: #a0522d;
+  --verde-salvia: #87a96b;
+  --alabastro-calido: #f5e6d3;
+  --vara-de-oro: #d4a437;
+  --rosa-polvoriento: #c47a6d;
+
+  /* Tipografías */
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Playfair Display", serif;
+
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary)
+}
+
+
+.logo{
+    width: 140px;
+    height: auto;
+
+}
+
+a{
+ text-decoration: none;
+}
+/*main*/
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: content-box;
+    background-color: var(--alabastro-calido);
+    margin: 50px;
+    
+}
+
+/*form*/
+
+
+.content-form{
+    background-color: #87a96b;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+}
+.content-form h1{
+    margin: 50px;
+    color: white;
+    user-select: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    
+}
+
+input {
+  width: 500px;
+  max-width: 100%;
+  height: 30px;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 10px;
+  border-style: none;
+  
+  
+  
+  
+}
+
+#mensaje{
+    border-style: none;
+    width: 500px;
+    padding: 10px;
+    resize: none;
+}
+
+#btn-form {
+    background-color: var(--siena-tostado);
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+
+/*Pseudoelementos*/
+
+#btn-form:hover{
+    transform: scale(1.1);
+}
+.aviso-content button:hover{
+    text-align: center;
+    font-size: 15px;
+}
+
+/*modal*/
+
+.aviso {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.aviso-content{
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.aviso-content button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(255, 255, 255);
+}
+ 
+/*media querys*/
+@media (max-width: 768px) {
+    main {
+        margin: 20px;
+    }
+
+    .content-form {
+        padding: 20px;
+    }
+
+    .content-form h1 {
+        font-size: 1.8rem;
+        margin: 20px;
+    }
+
+    input,
+    #mensaje {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #btn-form {
+        width: 120px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-form h1 {
+        font-size: 1.5rem;
+    }
+
+    input,
+    #mensaje {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #btn-form {
+        width: 100px;
+        height: 35px;
+    }
+}
